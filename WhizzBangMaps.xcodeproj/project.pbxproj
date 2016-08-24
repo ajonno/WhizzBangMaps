@@ -1,0 +1,401 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		40A9A15068BC70821B92EFF1 /* Pods_WhizzBangMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F68F6B31CFB73CCB7D9CC3B /* Pods_WhizzBangMaps.framework */; };
+		EF558C9C1D6D5D89006E1A2B /* MapDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF558C9B1D6D5D89006E1A2B /* MapDataProvider.swift */; };
+		EF558C9E1D6D5DD5006E1A2B /* MapLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF558C9D1D6D5DD5006E1A2B /* MapLocation.swift */; };
+		EF96C2BD1D6E5B4400825684 /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF96C2BC1D6E5B4400825684 /* MapAnnotation.swift */; };
+		EFA1AA681D6D56170099EEF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA1AA671D6D56170099EEF9 /* AppDelegate.swift */; };
+		EFA1AA6A1D6D56170099EEF9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA1AA691D6D56170099EEF9 /* ViewController.swift */; };
+		EFA1AA6D1D6D56170099EEF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFA1AA6B1D6D56170099EEF9 /* Main.storyboard */; };
+		EFA1AA6F1D6D56170099EEF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EFA1AA6E1D6D56170099EEF9 /* Assets.xcassets */; };
+		EFA1AA721D6D56170099EEF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EFA1AA701D6D56170099EEF9 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1772F6EC436B884402A29BAE /* Pods-WhizzBangMaps.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhizzBangMaps.release.xcconfig"; path = "Pods/Target Support Files/Pods-WhizzBangMaps/Pods-WhizzBangMaps.release.xcconfig"; sourceTree = "<group>"; };
+		2F68F6B31CFB73CCB7D9CC3B /* Pods_WhizzBangMaps.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhizzBangMaps.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6340BB37AE1C452D411A86A5 /* Pods-WhizzBangMaps.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhizzBangMaps.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WhizzBangMaps/Pods-WhizzBangMaps.debug.xcconfig"; sourceTree = "<group>"; };
+		EF558C9B1D6D5D89006E1A2B /* MapDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapDataProvider.swift; sourceTree = "<group>"; };
+		EF558C9D1D6D5DD5006E1A2B /* MapLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapLocation.swift; sourceTree = "<group>"; };
+		EF96C2BC1D6E5B4400825684 /* MapAnnotation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
+		EFA1AA641D6D56170099EEF9 /* WhizzBangMaps.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhizzBangMaps.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EFA1AA671D6D56170099EEF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EFA1AA691D6D56170099EEF9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EFA1AA6C1D6D56170099EEF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EFA1AA6E1D6D56170099EEF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EFA1AA711D6D56170099EEF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		EFA1AA731D6D56170099EEF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EFA1AA611D6D56170099EEF9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40A9A15068BC70821B92EFF1 /* Pods_WhizzBangMaps.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1FB494736A41246A0147AFFF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6340BB37AE1C452D411A86A5 /* Pods-WhizzBangMaps.debug.xcconfig */,
+				1772F6EC436B884402A29BAE /* Pods-WhizzBangMaps.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C4D06C7636B778E826A7D7BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2F68F6B31CFB73CCB7D9CC3B /* Pods_WhizzBangMaps.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EF558C9A1D6D5B95006E1A2B /* API */ = {
+			isa = PBXGroup;
+			children = (
+				EF558C9B1D6D5D89006E1A2B /* MapDataProvider.swift */,
+				EF558C9D1D6D5DD5006E1A2B /* MapLocation.swift */,
+				EF96C2BC1D6E5B4400825684 /* MapAnnotation.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		EFA1AA5B1D6D56170099EEF9 = {
+			isa = PBXGroup;
+			children = (
+				EFA1AA661D6D56170099EEF9 /* WhizzBangMaps */,
+				EFA1AA651D6D56170099EEF9 /* Products */,
+				1FB494736A41246A0147AFFF /* Pods */,
+				C4D06C7636B778E826A7D7BF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		EFA1AA651D6D56170099EEF9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EFA1AA641D6D56170099EEF9 /* WhizzBangMaps.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EFA1AA661D6D56170099EEF9 /* WhizzBangMaps */ = {
+			isa = PBXGroup;
+			children = (
+				EF558C9A1D6D5B95006E1A2B /* API */,
+				EFA1AA671D6D56170099EEF9 /* AppDelegate.swift */,
+				EFA1AA691D6D56170099EEF9 /* ViewController.swift */,
+				EFA1AA6B1D6D56170099EEF9 /* Main.storyboard */,
+				EFA1AA6E1D6D56170099EEF9 /* Assets.xcassets */,
+				EFA1AA701D6D56170099EEF9 /* LaunchScreen.storyboard */,
+				EFA1AA731D6D56170099EEF9 /* Info.plist */,
+			);
+			path = WhizzBangMaps;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EFA1AA631D6D56170099EEF9 /* WhizzBangMaps */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EFA1AA761D6D56170099EEF9 /* Build configuration list for PBXNativeTarget "WhizzBangMaps" */;
+			buildPhases = (
+				909F599183B3B34AB2B6AFF3 /* [CP] Check Pods Manifest.lock */,
+				EFA1AA601D6D56170099EEF9 /* Sources */,
+				EFA1AA611D6D56170099EEF9 /* Frameworks */,
+				EFA1AA621D6D56170099EEF9 /* Resources */,
+				FF617AAC605EE1D1C3E2828F /* [CP] Embed Pods Frameworks */,
+				31735146A2349D9E48190EF9 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WhizzBangMaps;
+			productName = WhizzBangMaps;
+			productReference = EFA1AA641D6D56170099EEF9 /* WhizzBangMaps.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EFA1AA5C1D6D56170099EEF9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = AAMSCO;
+				TargetAttributes = {
+					EFA1AA631D6D56170099EEF9 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = EFA1AA5F1D6D56170099EEF9 /* Build configuration list for PBXProject "WhizzBangMaps" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EFA1AA5B1D6D56170099EEF9;
+			productRefGroup = EFA1AA651D6D56170099EEF9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EFA1AA631D6D56170099EEF9 /* WhizzBangMaps */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EFA1AA621D6D56170099EEF9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EFA1AA721D6D56170099EEF9 /* LaunchScreen.storyboard in Resources */,
+				EFA1AA6F1D6D56170099EEF9 /* Assets.xcassets in Resources */,
+				EFA1AA6D1D6D56170099EEF9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		31735146A2349D9E48190EF9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WhizzBangMaps/Pods-WhizzBangMaps-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		909F599183B3B34AB2B6AFF3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FF617AAC605EE1D1C3E2828F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WhizzBangMaps/Pods-WhizzBangMaps-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EFA1AA601D6D56170099EEF9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF558C9C1D6D5D89006E1A2B /* MapDataProvider.swift in Sources */,
+				EF96C2BD1D6E5B4400825684 /* MapAnnotation.swift in Sources */,
+				EFA1AA6A1D6D56170099EEF9 /* ViewController.swift in Sources */,
+				EFA1AA681D6D56170099EEF9 /* AppDelegate.swift in Sources */,
+				EF558C9E1D6D5DD5006E1A2B /* MapLocation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EFA1AA6B1D6D56170099EEF9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EFA1AA6C1D6D56170099EEF9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		EFA1AA701D6D56170099EEF9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EFA1AA711D6D56170099EEF9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EFA1AA741D6D56170099EEF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EFA1AA751D6D56170099EEF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EFA1AA771D6D56170099EEF9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6340BB37AE1C452D411A86A5 /* Pods-WhizzBangMaps.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = WhizzBangMaps/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.aamsco.WhizzBangMaps;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		EFA1AA781D6D56170099EEF9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1772F6EC436B884402A29BAE /* Pods-WhizzBangMaps.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = WhizzBangMaps/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.aamsco.WhizzBangMaps;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EFA1AA5F1D6D56170099EEF9 /* Build configuration list for PBXProject "WhizzBangMaps" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFA1AA741D6D56170099EEF9 /* Debug */,
+				EFA1AA751D6D56170099EEF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EFA1AA761D6D56170099EEF9 /* Build configuration list for PBXNativeTarget "WhizzBangMaps" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EFA1AA771D6D56170099EEF9 /* Debug */,
+				EFA1AA781D6D56170099EEF9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EFA1AA5C1D6D56170099EEF9 /* Project object */;
+}
