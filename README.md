@@ -11,3 +11,5 @@ Cocoapods was used so please open the workspace file in XCode - WhizzBangMaps.xc
 All pods are included in the repo so you should be able to pull this down and build without needing to 'pod install'.
 
 Tested and ran ok both on sim and on device (iPhone 6). For purpose of this app was just targetted at iPhone.
+
+Had fun with this, enjoy the map(ping) app!
