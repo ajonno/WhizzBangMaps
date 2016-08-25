@@ -16,10 +16,14 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
 	var searchedTypes = ["bakery", "bar", "cafe", "grocery_or_supermarket", "restaurant"]
 	let dataProvider = MapDataProvider()
 	let searchRadius: Double = 1000
-
+    var firstLine = true
+    
 	var locationManager = CLLocationManager()
-	var userLocation: CLLocationCoordinate2D?
-	
+	var myLocation: CLLocation?
+    
+    var locationsDict = [CLLocation: Double]()
+
+    
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
@@ -28,10 +32,10 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
 		self.locationManager.requestWhenInUseAuthorization();
 		
 		map.delegate = self
-		
 
 	}
-	override func viewWillAppear(animated: Bool) {
+
+    override func viewWillAppear(animated: Bool) {
 		determineMyCurrentLocation()
 	}
 	
@@ -41,46 +45,105 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
 		}
 	}
 	
-	var first = 0 //for testing
 	func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-		var userLocation = locations[0] as CLLocation
-		
-		first++
-		// Call stopUpdatingLocation() to stop listening for location updates,
-		// other wise this function will be called every time when user location changes.
+        myLocation = locations[0] as CLLocation
+        
 		manager.stopUpdatingLocation()
 		
-		if (first == 1) {
-			fetchNearbyPlaces(userLocation.coordinate)
-			centerMapOnLocation(userLocation)
+		if (firstLine) {
+			fetchNearbyPlaces(myLocation!.coordinate)
+			centerMapOnLocation(myLocation!)
 		}
-		print("user latitude = \(userLocation.coordinate.latitude)")
-		print("user longitude = \(userLocation.coordinate.longitude)")
 	}
 	
 	func locationManager(manager: CLLocationManager, didFailWithError error: NSError)
 	{
 		print("Error \(error)")
 	}
-	
+    
 	let regionRadius: CLLocationDistance = 1000
 	func centerMapOnLocation(location: CLLocation) {
 		let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
                                                             regionRadius * 2.0, regionRadius * 2.0)
 		map.setRegion(coordinateRegion, animated: true)
 	}
-	
-	func fetchNearbyPlaces(coordinate: CLLocationCoordinate2D) {
+    
+  	func fetchNearbyPlaces(coordinate: CLLocationCoordinate2D) {
 		
+        
 		dataProvider.fetchPlacesNearCoordinate(coordinate, radius:searchRadius, types: searchedTypes) { places in
 			
 			for place: MapLocation in places {
-				self.map.addAnnotation(MapAnnotation(title: place.name,locationName: place.address ,coordinate: place.coordinate))
-			}
-		}
-	}
-	
+                self.map.addAnnotation(MapAnnotation(title: place.name,locationName: place.address ,coordinate: place.coordinate))
 
+                let distance = place.location?.distanceFromLocation(self.myLocation!)
+
+                //add locations into 'master' Dictionary
+                self.locationsDict[place.location!] = distance
+            }
+            
+
+            //*************************************************************************************
+            //draw line from currentlocation to first pin
+            let (firstPin, _) = (self.locationsDict.minElement {$0.1 < $1.1})!
+            self.drawLines([firstPin.coordinate, self.myLocation!.coordinate])
+
+            let numberOfPoints = self.locationsDict.count
+            
+            //draw line from first pin to next pin and start popping elements from the locationsDict
+            var fromThisPin = firstPin
+            var tempDict = [CLLocation: Double]()
+            var toClosestPin: CLLocation
+        
+            for i in 0...(numberOfPoints - 2) {
+
+                if (i == 0) {
+                    self.locationsDict.removeValueForKey(firstPin)
+                } else {
+                    self.locationsDict.removeValueForKey(fromThisPin)
+                }
+
+                //now calc distance
+                tempDict.removeAll()
+                for (key, _) in (Array(self.locationsDict).sort {$0.1 < $1.1}) {
+                    tempDict[key] = key.distanceFromLocation(fromThisPin)
+                }
+                
+                toClosestPin = tempDict.minElement {$0.1 < $1.1}!.0
+                
+                //now draw a line from current loc to first item in array
+                self.drawLines([fromThisPin.coordinate, toClosestPin.coordinate])
+                
+                fromThisPin = toClosestPin
+            }
+            
+            //last stop - from final map point back to devices current location
+            self.drawLines([fromThisPin.coordinate, self.myLocation!.coordinate])
+            
+        }
+	}
+    
+    func drawLines(coordArray: [CLLocationCoordinate2D]) {
+        var localcoord = [CLLocationCoordinate2D]()
+        localcoord = coordArray
+        let polyline = MKPolyline.init(coordinates: &localcoord, count: coordArray.count)
+        self.map.addOverlay(polyline)
+    }
+    
+    func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
+        if overlay.isKindOfClass(MKPolyline) {
+            // draw the track
+            let polyLine = overlay
+            let polyLineRenderer = MKPolylineRenderer(overlay: polyLine)
+            polyLineRenderer.strokeColor = UIColor.blueColor()
+            polyLineRenderer.lineWidth = 2.0
+            
+            return polyLineRenderer
+        }
+        let noResult = MKOverlayRenderer()
+        return noResult
+    }
+    
 	func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
 		
 		if let annotation = annotation as? MapAnnotation {
@@ -97,7 +160,6 @@ class ViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDele
 				view = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
 				view.canShowCallout = true
 				view.calloutOffset = CGPoint(x: -5, y: 5)
-				//view.rightCalloutAccessoryView = UIButton(type: .DetailDisclosure)
 			}
 			return view
 		}

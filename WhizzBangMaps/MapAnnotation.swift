@@ -15,7 +15,13 @@ class MapAnnotation: NSObject, MKAnnotation {
 	let coordinate: CLLocationCoordinate2D
  
 	init(title: String, locationName: String, coordinate: CLLocationCoordinate2D) {
-		self.title = title
+
+        let lat = String(coordinate.latitude)
+        let lon = String(coordinate.longitude)
+        
+        let finalString = lat + " " + lon
+        
+        self.title = finalString //title
 		self.locationName = locationName
 		self.coordinate = coordinate
 		

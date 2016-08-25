@@ -16,7 +16,8 @@ class MapLocation {
 	let name: String
 	let address: String
 	let coordinate: CLLocationCoordinate2D
-	let placeType: String
+    let location: CLLocation?
+    let placeType: String
 	var photoReference: String?
 	var photo: UIImage?
 	
@@ -30,6 +31,9 @@ class MapLocation {
 		let lng = json["geometry"]["location"]["lng"].doubleValue as CLLocationDegrees
 		coordinate = CLLocationCoordinate2DMake(lat, lng)
 		
+        //initialise the CLLocation object
+        self.location = CLLocation(latitude: lat, longitude: lng)
+        
 		photoReference = json["photos"][0]["photo_reference"].string
 		
 		var foundType = "restaurant"
@@ -41,6 +45,8 @@ class MapLocation {
 			}
 		}
 		placeType = foundType
-	}
-	
+        
+  	}
+  	
+    
 }
