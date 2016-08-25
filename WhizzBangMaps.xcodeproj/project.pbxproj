@@ -140,6 +140,7 @@
 				TargetAttributes = {
 					EFA1AA631D6D56170099EEF9 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = MP6ZFBJ4X3;
 					};
 				};
 			};
@@ -345,6 +346,7 @@
 			baseConfigurationReference = 6340BB37AE1C452D411A86A5 /* Pods-WhizzBangMaps.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -362,6 +364,7 @@
 			baseConfigurationReference = 1772F6EC436B884402A29BAE /* Pods-WhizzBangMaps.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
