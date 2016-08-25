@@ -23,17 +23,42 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="M5h-5h-yq5"/>
                                 </connections>
                             </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Retrieve Map Data from Google..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84I-1L-ord">
+                                <rect key="frame" x="173" y="289" width="254" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ipi-Ml-3yk">
+                                <rect key="frame" x="282" y="318" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whizz-logo" translatesAutoresizingMaskIntoConstraints="NO" id="pML-5A-aoJ">
+                                <rect key="frame" x="254" y="104" width="93" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="93" id="imT-8y-8Em"/>
+                                    <constraint firstAttribute="height" constant="41" id="tCC-fa-Sft"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.062745098040000002" green="0.1215686275" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="84I-1L-ord" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1lP-r4-f3Q"/>
+                            <constraint firstItem="ipi-Ml-3yk" firstAttribute="top" secondItem="84I-1L-ord" secondAttribute="bottom" constant="8" symbolic="YES" id="Bds-Jg-gYP"/>
+                            <constraint firstItem="pML-5A-aoJ" firstAttribute="centerX" secondItem="84I-1L-ord" secondAttribute="centerX" id="Byt-Zp-paR"/>
                             <constraint firstItem="c3V-qs-NDZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="JFX-ix-eWj"/>
                             <constraint firstAttribute="trailing" secondItem="c3V-qs-NDZ" secondAttribute="trailing" id="Sx7-5h-j4C"/>
+                            <constraint firstItem="ipi-Ml-3yk" firstAttribute="centerX" secondItem="84I-1L-ord" secondAttribute="centerX" id="Wwb-PM-fD4"/>
                             <constraint firstItem="c3V-qs-NDZ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="ckz-ed-eme"/>
                             <constraint firstItem="c3V-qs-NDZ" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="ruT-MM-Tvo"/>
+                            <constraint firstItem="pML-5A-aoJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="84" id="yKS-Wo-70G"/>
+                            <constraint firstItem="84I-1L-ord" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zOF-EM-Lki"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="loadingIndicator" destination="ipi-Ml-3yk" id="KgR-6p-aGD"/>
+                        <outlet property="loadingLabel" destination="84I-1L-ord" id="Ywe-HP-Fuo"/>
                         <outlet property="map" destination="c3V-qs-NDZ" id="BGq-1A-gPK"/>
+                        <outlet property="whizzLogo" destination="pML-5A-aoJ" id="1qq-k7-V8m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -41,4 +66,7 @@
             <point key="canvasLocation" x="404" y="68"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="whizz-logo" width="118" height="71"/>
+    </resources>
 </document>
