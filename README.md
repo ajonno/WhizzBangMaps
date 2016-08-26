@@ -12,7 +12,7 @@ All pods are included in the repo so you should be able to pull this down and bu
 
 Tested and ran ok both on sim and on device (iPhone 6). For purpose of this app was just targetted at iPhone.
 
-Note: app wont re-render the shortest path points if for example you change location / have a significant location change whilst the app is running on device. You would need to re-start the app. Would be nice addition tho. Also a few magic strings re search terms, could add user defined search terms as additional feature.
+Note: app wont re-render the shortest path points if for example you change location / have a significant location change whilst the app is running on device. You would need to re-start the app. Would be nice addition tho. Also a few magic strings re search terms (could add user defined search terms as additional feature later).
 
 Limited error handling code. Would add additional in prod app. 
 
