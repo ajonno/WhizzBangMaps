@@ -78,8 +78,9 @@ class ViewController: UIViewController {
                 //add locations into 'master' Dictionary
                 self.locationsDict[place.location!] = distance
             }
-
-            self.placePinsOnMap()
+	if places.count > 0 {
+		self.placePinsOnMap()
+	}
 
         }
 	}
