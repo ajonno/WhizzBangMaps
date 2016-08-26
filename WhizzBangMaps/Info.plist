@@ -22,8 +22,6 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>MGLMapboxAccessToken</key>
-	<string>pk.eyJ1IjoidG1jdyIsImEiOiJjaWtmazdhancwMDFkdWVrbHJ1Y3lqbjlxIn0.i-GX7HSYJefN_begdRTvPg</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>This project uses your location to improve maps</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
@@ -40,5 +38,10 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

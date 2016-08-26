@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class ViewController: UIViewController /*, MKMapViewDelegate, CLLocationManagerDelegate*/ {
+class ViewController: UIViewController {
 
     // MARK: Outlets
     @IBOutlet weak var map: MKMapView!
@@ -18,9 +18,9 @@ class ViewController: UIViewController /*, MKMapViewDelegate, CLLocationManagerD
     @IBOutlet weak var loadingLabel: UILabel!
 	
 	var searchedTypes = ["bakery", "bar", "cafe", "grocery_or_supermarket", "restaurant"]
-	let dataProvider = MapDataProvider()
+
+    let dataProvider = MapDataProvider()
 	let searchRadius: Double = 1000
-    let regionRadius: CLLocationDistance = 1000
 
 	var locationManager = CLLocationManager()
 	var myLocation: CLLocation?
@@ -62,12 +62,11 @@ class ViewController: UIViewController /*, MKMapViewDelegate, CLLocationManagerD
 
 	private func centerMapOnLocation(location: CLLocation) {
 		let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
-                                                            regionRadius * 2.0, regionRadius * 2.0)
+                                                            searchRadius * 2.0, searchRadius * 2.0)
 		map.setRegion(coordinateRegion, animated: true)
 	}
     
   	private func fetchNearbyPlaces(coordinate: CLLocationCoordinate2D) {
-		
         
 		dataProvider.fetchPlacesNearCoordinate(coordinate, radius:searchRadius, types: searchedTypes) { places in
 			
@@ -161,7 +160,6 @@ extension ViewController: CLLocationManagerDelegate {
         }
     }
 }
-
 
 extension ViewController: MKMapViewDelegate {
     

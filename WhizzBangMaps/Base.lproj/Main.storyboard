@@ -17,12 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c3V-qs-NDZ">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="M5h-5h-yq5"/>
-                                </connections>
-                            </mapView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Retrieve Map Data from Google..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="84I-1L-ord">
                                 <rect key="frame" x="173" y="289" width="254" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -39,6 +33,12 @@
                                     <constraint firstAttribute="height" constant="41" id="tCC-fa-Sft"/>
                                 </constraints>
                             </imageView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c3V-qs-NDZ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="M5h-5h-yq5"/>
+                                </connections>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" red="0.062745098040000002" green="0.1215686275" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
